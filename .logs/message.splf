@@ -1,0 +1,11 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CPC2198: Bibliothèque en cours modifiée en L000000429.
+
+>> executing command: crtrpgmod module(L000000429/﻿MESSAGE) srcstmf('/home/DRUBIGNY/builds/messageUtils/sources/message.rpgle') AUT() DBGVIEW(*ALL) OPTIMIZE() OPTION(*EVENTF) OUTPUT(*PRINT) TEXT(' ') TGTCCSID(*JOB ) TGTRLS() INCDIR('sourcesref') DEFINE()
+>> liblist: QSYS QSYS2 QHLPSYS QUSRSYS QSHELL L000000429 BAFIC BAPGM BETRAV BERGER QGPL QTEMP BP920 BFE00 BERET BPMQS BPAMM BFMIR BPMIR BPOUTILS LAUNCHER SMTP SCAN400 BFWORK
+>> executing time: 2024-01-12-15.27.43.00
+
+CPD0012: Le qualifiant commençant par 'MESSAGE) ' contient des caractères incorrects.
+CPF0006: Erreurs trouvées dans la commande.
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

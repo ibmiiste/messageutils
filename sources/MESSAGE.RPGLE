@@ -2,7 +2,7 @@
 
 ctp-opt nomain;
 
-/copy sourcesref,message_h
+/copy 'sourcesref,message_h.rpgleinc'
 
 / --------------------------------------------------
 // Nom de la procédure: throwMessage
