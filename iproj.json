@@ -6,8 +6,8 @@
     "includePath": [
         "sourcesref"
     ],
-    "objlib": "&BUILDLIB",
-    "curlib": "&BUILDLIB",
+    "objlib": "*CURLIB",
+    "curlib": "*CURLIB",
     "preUsrLibl": [],
     "postUsrLibl": [],
     "setIBMiEnvCmd": [],
