@@ -1,10 +1,10 @@
 ﻿**FREE
 
-ctp-opt nomain;
+ctl-opt nomain;
 
-/copy 'sourcesref,message_h.rpgleinc'
+/copy message_h
 
-/ --------------------------------------------------
+//--------------------------------------------------
 // Nom de la procédure: throwMessage
 // Objectif: Envoyé un message à la file de message du programme
 // Retourne:
