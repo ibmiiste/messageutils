@@ -1,6 +1,33 @@
 ﻿**FREE
 /include Api/sources,ErreurApi
 
+// DS returned by QMHRCVPM for format RCVM0300
+Dcl-DS RCVM0300  QUALIFIED BASED(DUMMYPTR);
+    ByteReturned   Int(10);
+    ByteAvail      Int(10);
+    MsgSeverity    Int(10);
+    MsgId          Char(7);
+    MsgType        Char(2);
+    MsgKey         Char(4);
+    MsgFileName    Char(10);
+    MsgLibSpec     Char(10);
+    MsgLibUsed     Char(10);
+    AlertOption    Char(9);
+    CCSIDCnvIndText Int(10);
+    CCSIDCnvIndData Int(10);
+    CCSIDMsg       Int(10);
+    CCSIDReplace   Int(10);
+    LenReplace1    Int(10);
+    LenReplace2    Int(10);
+    LenMsgReturn   Int(10);
+    LenMsgAvail    Int(10);
+    LenHelpReturn  Int(10);
+    LenHelpAvail   Int(10);
+    LenSenderReturn Int(10);
+    LenSenderAvail Int(10);
+    MsgData        Char(5000);
+End-DS;         
+
 // --------------------------------------------------
 // Message
 // id : Identificateur du message.
