@@ -49,3 +49,18 @@ DCL-PR SndPgmMsg ExtPgm('QMHSNDPM');
   errorForAPI   like(ApiError);
 END-PR; 
 
+//*************************************************************************
+//                                                                       **
+//  Send  : Emission d'un message programme avec choix du type de        **
+//          message                                                      **
+//                                                                       **
+//  Returns:   La clé du message généré                                  **
+//*************************************************************************
+DCL-PR msg_send char(4) ExtProc('MSG_SEND');
+  MsgId     char(7) const;
+  MsgDataIn varchar(32767) const options(*Omit:*NoPass);
+  MsgType   char(10) const options(*NoPass);
+  MsgFileIn char(10) const options(*NoPass);
+  MsgLibIn char(10) const options(*NoPass);
+  CallStackCounterIn bindec(4) const options(*nopass);
+END-PR;   
