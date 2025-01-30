@@ -1,16 +1,18 @@
 {
-    "description": "Utilitaires de message IBM i",
-    "version": "1.0.0",
-    "license": "",
-    "repository": "https://github.com/IBMiservices/messageutils.git",
-    "includePath": [
-        "sourcesref"
-    ],
-    "objlib": "*CURLIB",
-    "curlib": "*CURLIB",
-    "preUsrLibl": [],
-    "postUsrLibl": [],
-    "setIBMiEnvCmd": [],
-    "tgtCcsid": "*JOB",
-    "extensions": {}
+  "description": "Utilitaires de message IBM i",
+  "version": "0.0.1",
+  "license": "",
+  "repository": "https://github.com/IBMiservices/messageutils.git",
+  "includePath": [
+    "sourcesref"
+  ],
+  "objlib": "*CURLIB",
+  "curlib": "&CURLIB",
+  "preUsrLibl": [],
+  "postUsrLibl": [],
+  "setIBMiEnvCmd": [],
+  "tgtCcsid": "*JOB",
+  "extensions": {},
+  "buildCommand": "makei build",
+  "compileCommand": "makei compile -f {filename}"
 }

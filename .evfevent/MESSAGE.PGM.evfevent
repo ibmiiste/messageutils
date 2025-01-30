@@ -1,0 +1,44 @@
+TIMESTAMP  0 20250130122126
+PROCESSOR  0 000 1
+FILEID     0 001 000000 060 /home/DRUBIGNY/builds/messageUtils/sources/MESSAGE.pgm.RPGLE 20250130121858 0
+ERROR      0 001 1 000003 000003 009 000003 014 RNF1304 E 20 085 Le mot clé NOMAIN n'est pas admis avec la commande CRTBNDRPG pour créer un programme.
+FILEID     0 002 000005 064 /home/DRUBIGNY/builds/messageUtils/sourcesref/message_h.rpgleinc 20250129121403 0
+ERROR      0 002 1 000002 000002 010 000002 030 RNF0273 T 40 090 Le compilateur ne peut pas ouvrir le fichier /COPY ou /INCLUDE : la directive est ignorée.
+ERROR      0 002 1 000086 000086 008 000086 015 RNF3788 S 30 089 DFTACTGRP(*NO) doit être spécifié pour un prototype qui ne possède pas le mot clé EXTPGM.
+FILEEND    0 002 000093
+ERROR      0 002 1 000076 000076 022 000076 029 RNF7030 S 30 049 Le nom ou l'indicateur APIERROR n'est pas défini.
+ERROR      0 001 1 000077 000077 024 000077 030 RNF7030 S 30 048 Le nom ou l'indicateur ERR_API n'est pas défini.
+ERROR      0 002 1 000042 000042 003 000042 004 RNF7031 I 00 046 Le nom ou l'indicateur ID n'est pas référencé.
+ERROR      0 002 1 000044 000044 003 000044 010 RNF7031 I 00 052 Le nom ou l'indicateur FILENAME n'est pas référencé.
+ERROR      0 002 1 000045 000045 003 000045 009 RNF7031 I 00 051 Le nom ou l'indicateur LIBNAME n'est pas référencé.
+ERROR      0 002 1 000046 000046 003 000046 006 RNF7031 I 00 048 Le nom ou l'indicateur TEXT n'est pas référencé.
+ERROR      0 002 1 000047 000047 003 000047 006 RNF7031 I 00 048 Le nom ou l'indicateur DATA n'est pas référencé.
+ERROR      0 002 1 000048 000048 003 000048 005 RNF7031 I 00 047 Le nom ou l'indicateur KEY n'est pas référencé.
+ERROR      0 002 1 000041 000041 008 000041 014 RNF7031 I 00 051 Le nom ou l'indicateur MESSAGE n'est pas référencé.
+ERROR      0 002 1 000006 000006 005 000006 016 RNF7031 I 00 054 Le nom ou l'indicateur BYTERET... n'est pas référencé.
+ERROR      0 002 1 000007 000007 005 000007 013 RNF7031 I 00 053 Le nom ou l'indicateur BYTEAVAIL n'est pas référencé.
+ERROR      0 002 1 000008 000008 005 000008 015 RNF7031 I 00 054 Le nom ou l'indicateur MSGSEVE... n'est pas référencé.
+ERROR      0 002 1 000009 000009 005 000009 009 RNF7031 I 00 049 Le nom ou l'indicateur MSGID n'est pas référencé.
+ERROR      0 002 1 000010 000010 005 000010 011 RNF7031 I 00 051 Le nom ou l'indicateur MSGTYPE n'est pas référencé.
+ERROR      0 002 1 000012 000012 005 000012 015 RNF7031 I 00 054 Le nom ou l'indicateur MSGFILE... n'est pas référencé.
+ERROR      0 002 1 000013 000013 005 000013 014 RNF7031 I 00 054 Le nom ou l'indicateur MSGLIBSPEC n'est pas référencé.
+ERROR      0 002 1 000014 000014 005 000014 014 RNF7031 I 00 054 Le nom ou l'indicateur MSGLIBUSED n'est pas référencé.
+ERROR      0 002 1 000015 000015 005 000015 015 RNF7031 I 00 054 Le nom ou l'indicateur ALERTOP... n'est pas référencé.
+ERROR      0 002 1 000016 000016 005 000016 019 RNF7031 I 00 054 Le nom ou l'indicateur CCSIDCN... n'est pas référencé.
+ERROR      0 002 1 000017 000017 005 000017 019 RNF7031 I 00 054 Le nom ou l'indicateur CCSIDCN... n'est pas référencé.
+ERROR      0 002 1 000018 000018 005 000018 012 RNF7031 I 00 052 Le nom ou l'indicateur CCSIDMSG n'est pas référencé.
+ERROR      0 002 1 000019 000019 005 000019 016 RNF7031 I 00 054 Le nom ou l'indicateur CCSIDRE... n'est pas référencé.
+ERROR      0 002 1 000020 000020 005 000020 015 RNF7031 I 00 054 Le nom ou l'indicateur LENREPL... n'est pas référencé.
+ERROR      0 002 1 000021 000021 005 000021 015 RNF7031 I 00 054 Le nom ou l'indicateur LENREPL... n'est pas référencé.
+ERROR      0 002 1 000022 000022 005 000022 016 RNF7031 I 00 054 Le nom ou l'indicateur LENMSGR... n'est pas référencé.
+ERROR      0 002 1 000023 000023 005 000023 015 RNF7031 I 00 054 Le nom ou l'indicateur LENMSGA... n'est pas référencé.
+ERROR      0 002 1 000024 000024 005 000024 017 RNF7031 I 00 054 Le nom ou l'indicateur LENHELP... n'est pas référencé.
+ERROR      0 002 1 000025 000025 005 000025 016 RNF7031 I 00 054 Le nom ou l'indicateur LENHELP... n'est pas référencé.
+ERROR      0 002 1 000026 000026 005 000026 019 RNF7031 I 00 054 Le nom ou l'indicateur LENSEND... n'est pas référencé.
+ERROR      0 002 1 000027 000027 005 000027 018 RNF7031 I 00 054 Le nom ou l'indicateur LENSEND... n'est pas référencé.
+ERROR      0 002 1 000028 000028 005 000028 011 RNF7031 I 00 051 Le nom ou l'indicateur MSGDATA n'est pas référencé.
+ERROR      0 001 1 000077 000077 024 000077 030 RNF7503 S 30 045 L'expression contient un opérande non défini.
+ERROR      0 001 1 000069 000069 001 000069 000 RNF5410 S 30 041 Le prototype de l'appel n'est pas défini.
+ERROR      0 001 1 000000 000000 001 000000 000 RNF7023 T 40 064 Le compilateur ne peut déterminer comment le programme s'arrête.
+ERROR      0 001 0 000000 000000 000 000000 000 RNS9308 T 50 075 Arrêt de la compilation. Erreurs de gravité 40 détectées dans le programme.
+FILEEND    0 001 000080

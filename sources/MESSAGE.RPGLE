@@ -2,48 +2,79 @@
 
 ctl-opt nomain;
 
-/copy message_h
+/COPY 'MESSAGE_H'
 
-//--------------------------------------------------
-// Nom de la procédure: throwMessage
-// Objectif: Envoyé un message à la file de message du programme
-// Retourne:
-// Paramètre: id => Identificateur du message
-// Paramètre: file => Nom du fichier qualifié qui contient le message
-// Paramètre: data => Les données du message
-// Paramètre: length => Longueur des données du message
-// Paramètre: type => Type du message
-// Paramètre: callStack => La pile d'appel
-// Paramètre: callStackCtr => Le nombre de ligne de la pile d'appel
-// Paramètre: key => La clé du message
-// Paramètre: errorForAPI => La structure d'erreur pour l'API
-// --------------------------------------------------   
-DCL-PROC throwMessage EXPORT;
+     //***************************************************************************
+     //**                                                                       **
+     //**  msg_send : Emission d'un message programme avec choix du type de     **
+     //**             message                                                   **
+     //**                                                                       **
+     //**  Returns:   La clé du message généré                                  **
+     //***************************************************************************
 
-    DCL-PI *n;
-        id char(7) const;
-        dataIn varchar(3000) const options(*Omit:*NoPass);
-        gfileIn char(10) const options(*NoPass);
-        libIn char(10) const options(*NoPass);
+DCL-PROC msg_send EXPORT;
+
+    DCL-PI *n like(RCVM0300.MsgKey);
+        MsgId char(7) const;
+        MsgDataIn varchar(32767) const options(*omit:*nopass);
+        MsgTypeIn char(10) const options(*nopass);
+        MsgFileIn char(10) const options(*nopass);
+        MsgLibIn char(10) const options(*nopass);
+        CallStackCounterIn bindec(4) const options(*nopass);
     END-PI;
 
-    select;
-        when %parms() = %parmnum(libIn);
-            msg_send(id:dataIn:'*ESCAPE':gfileIn:libIn:2);
-        when %parms() = %parmnum(gfileIn);
-            msg_send(id:dataIn:'*ESCAPE':gfileIn:*blanks:2);
-        when %parms() = %parmnum(dataIn) and %addr(dataIn) <> *Null;
-            if %subst(id:1:3) = 'BAS';
-                msg_send(id:dataIn:'*ESCAPE':'BASMSG':*blanks:2);
-            else;
-                msg_send(id:dataIn:'*ESCAPE':'QCPFMSG':*blanks:2);
-            endif;
-        other;
-            if %subst(id:1:3) = 'BAS';
-                msg_send(id:*omit:'*ESCAPE':'BASMSG':*blanks:2);
-            else;
-                msg_send(id:*omit:'*ESCAPE':'QCPFMSG':*blanks:2);
-            endif;
-    endsl;
+    DCL-S w_lib char(10);
+    DCL-S MsgFile char(20) Inz('QCPFMSG   QSYS      ');
+    DCL-S MsgData varchar(32767);
+    DCL-S MsgKey char(4);
+    DCL-S MsgType char(10) Inz('*ESCAPE');
+    DCL-S CallStackCounter bindec(4) inz(1);
+    Dcl-ds Err_Api likeds(ApiError);
+          // Niveau de la pile auquel le message doit être envoyé
+    if %parms() >= %parmnum(CallStackCounterIn);
+        CallStackCounter = CallStackCounterIn;
+    endif;
 
-END-PROC;   
+          //biblio du fichier de message
+    if %parms() >= %parmnum(MsgLibIn);
+        w_lib = MsgLibIn;
+    endif;
+
+          //type de message
+    if %parms() >= %parmnum(MsgTypeIn);
+        MsgType = MsgTypeIn;
+    endif;
+
+          //fichier de message
+    if %parms() >= %parmnum(MsgFileIn);
+        %subst(MsgFile:1:10) = MsgFileIn;
+        if w_lib <> *blanks;
+            %subst(MsgFile:11:10) = w_lib;
+        else;
+            %subst(MsgFile:11:10) = '*LIBL';
+        endif;
+    else;
+             //fichier de messages de base CIS/ISTA
+        if %subst(msgId:1:3) = 'BAS';
+            %subst(MsgFile:1:10) = 'BASMSG';
+            %subst(MsgFile:11:10) = '*LIBL';
+        endif;
+    endif;
+
+          //données de message
+    if %parms() >= %parmnum(MsgDataIn) and %addr(MsgDataIn) <> *Null;
+        MsgData = MsgDataIn;
+    endif;
+
+    SndPgmMsg( MsgId
+              :MsgFile
+              :MsgData
+              :%Len(%Trimr(MsgData))
+              :MsgType
+              :'*'
+              :CallStackCounter
+              :MsgKey
+              :Err_Api);
+    return msgKey;
+
+END-PROC;                  
