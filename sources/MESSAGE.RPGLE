@@ -2,15 +2,16 @@
 
 ctl-opt nomain;
 
+/copy 'APIERROR'
 /COPY 'MESSAGE_H'
 
-     //***************************************************************************
-     //**                                                                       **
-     //**  msg_send : Emission d'un message programme avec choix du type de     **
-     //**             message                                                   **
-     //**                                                                       **
-     //**  Returns:   La clé du message généré                                  **
-     //***************************************************************************
+//***************************************************************************
+//**                                                                       **
+//**  msg_send : Emission d'un message programme avec choix du type de     **
+//**             message                                                   **
+//**                                                                       **
+//**  Returns:   La clé du message généré                                  **
+//******************************e*********************************************
 
 DCL-PROC msg_send EXPORT;
 
@@ -51,12 +52,6 @@ DCL-PROC msg_send EXPORT;
         if w_lib <> *blanks;
             %subst(MsgFile:11:10) = w_lib;
         else;
-            %subst(MsgFile:11:10) = '*LIBL';
-        endif;
-    else;
-             //fichier de messages de base CIS/ISTA
-        if %subst(msgId:1:3) = 'BAS';
-            %subst(MsgFile:1:10) = 'BASMSG';
             %subst(MsgFile:11:10) = '*LIBL';
         endif;
     endif;
