@@ -39,6 +39,13 @@ def clone_or_update(repo_name, repo_info, base_dir):
         os.remove(rules_mk_path)
         print(f"Fichier Rules.mk supprimé pour {repo_name}.\n")
 
+    # Supprimer le fichier .gitignore s'il existe
+    gitignore_path = os.path.join(repo_path, ".gitignore")
+    if (os.path.exists(gitignore_path)):
+        print(f"Suppression du fichier Rules.mk pour {repo_name}...")
+        os.remove(gitignore_path)
+        print(f"Fichier .gitignore supprimé pour {repo_name}.\n")    
+
 def install_dependencies(dependencies_file, base_dir):
     """
     Installe les dépendances spécifiées dans le fichier JSON.
