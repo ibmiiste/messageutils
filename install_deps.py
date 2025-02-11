@@ -54,13 +54,17 @@ def remove_readonly(func, path, excinfo):
     os.chmod(path, stat.S_IWRITE)
     func(path)
 
-def install_dependencies(dependencies_file, base_dir):
+def install_dependencies(dependencies_file, base_dir, processed_repos=None):
     """
     Installe les dépendances spécifiées dans le fichier JSON.
 
     :param dependencies_file: Chemin vers le fichier JSON des dépendances
     :param base_dir: Répertoire racine où les dépôts seront stockés
+    :param processed_repos: Ensemble des dépôts déjà traités pour éviter les redondances
     """
+    if processed_repos is None:
+        processed_repos = set()
+
     with open(dependencies_file, "r") as f:
         dependencies = json.load(f)["dependencies"]
 
@@ -69,10 +73,17 @@ def install_dependencies(dependencies_file, base_dir):
 
     # Traiter chaque dépendance
     for repo_name, repo_info in dependencies.items():
-        clone_or_update(repo_name, repo_info, base_dir)
+        if repo_name not in processed_repos:
+            clone_or_update(repo_name, repo_info, base_dir)
+            processed_repos.add(repo_name)
+            
+            # Traiter les dépendances imbriquées
+            nested_dependencies_file = os.path.join(base_dir, repo_name, "dependencies.json")
+            if os.path.exists(nested_dependencies_file):
+                install_dependencies(nested_dependencies_file, base_dir, processed_repos)
 
 # Exemple d'utilisation
 if __name__ == "__main__":
     dependencies_file = "dependencies.json"  # Chemin vers le fichier des dépendances
-    base_dir = "."  # Répertoire où cloner les dépôts
+    base_dir = "dep"  # Répertoire où cloner les dépôts
     install_dependencies(dependencies_file, base_dir)
