@@ -1,0 +1,86 @@
+[
+    {
+        "cmd": "crtrpgmod module(CSAD99OD07/MESSAGE) srcstmf('/home/DRUBIGNY/builds/messageutils/MessagesCore/sources/MESSAGE.RPGLE') AUT() DBGVIEW(*ALL) OPTIMIZE() OPTION(*EVENTF) OUTPUT(*PRINT) TEXT('') TGTCCSID(*JOB) TGTRLS() INCDIR('dep/APIIBMi/Sources' 'MessagesCore/sourcesref') DEFINE()",
+        "cmd_time": "2025-02-25-14.30.10.00",
+        "msgs": [
+            {
+                "msgid": "CPC2198",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2025-02-25-14.30.09.070416",
+                "message_text": "Biblioth\u00e8que en cours modifi\u00e9e en CSAD99OD07.",
+                "second_level": "&N Cause . . . . . : La biblioth\u00e8que en cours de la liste des biblioth\u00e8ques a \u00e9t\u00e9 modifi\u00e9e en CSAD99OD07.",
+                "from_program": "QLICHLLE",
+                "from_library": "QSYS",
+                "from_instruction": "01A3",
+                "to_program": "QP2USER2",
+                "to_library": "QSYS",
+                "to_module": "QP2API",
+                "to_procedure": "runpase_common__FiPvT2",
+                "to_instruction": "4"
+            },
+            {
+                "msgid": "CPC2206",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2025-02-25-14.30.09.187621",
+                "message_text": "Propri\u00e9t\u00e9 de l'objet QP2CMD de QTEMP, type *USRSPC modifi\u00e9e.",
+                "second_level": "&N Cause . . . . . : La propri\u00e9t\u00e9 de l'objet QP2CMD de la biblioth\u00e8que QTEMP, type *USRSPC, a \u00e9t\u00e9 modifi\u00e9e.",
+                "from_program": "QSYCHONR",
+                "from_library": "QSYS",
+                "from_instruction": "00EE",
+                "to_program": "QLIINSRT",
+                "to_library": "QSYS",
+                "to_module": null,
+                "to_procedure": null,
+                "to_instruction": "0651"
+            }
+        ],
+        "object": "MESSAGE.MODULE",
+        "source": "/home/DRUBIGNY/builds/messageutils/MessagesCore/sources/MESSAGE.RPGLE",
+        "output": "/home/DRUBIGNY/builds/messageutils/.logs/MessagesCore_sources_MESSAGE_RPGLE.splf",
+        "failed": false
+    },
+    {
+        "cmd": "CRTSRVPGM srcstmf('/home/DRUBIGNY/builds/messageutils/MessagesCore/sources/MESSAGESRV.BND') SRVPGM(CSAD99OD07/MESSAGESRV) MODULE(MESSAGE) BNDSRVPGM(*NONE) ACTGRP(*CALLER) TEXT('') TGTRLS() AUT() DETAIL(*BASIC) STGMDL(*SNGLVL ) OPTION()",
+        "cmd_time": "2025-02-25-14.30.17.00",
+        "msgs": [
+            {
+                "msgid": "CPC2198",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2025-02-25-14.30.16.348107",
+                "message_text": "Biblioth\u00e8que en cours modifi\u00e9e en CSAD99OD07.",
+                "second_level": "&N Cause . . . . . : La biblioth\u00e8que en cours de la liste des biblioth\u00e8ques a \u00e9t\u00e9 modifi\u00e9e en CSAD99OD07.",
+                "from_program": "QLICHLLE",
+                "from_library": "QSYS",
+                "from_instruction": "01A3",
+                "to_program": "QP2USER2",
+                "to_library": "QSYS",
+                "to_module": "QP2API",
+                "to_procedure": "runpase_common__FiPvT2",
+                "to_instruction": "4"
+            },
+            {
+                "msgid": "CPC2206",
+                "type": "COMPLETION",
+                "severity": 0,
+                "message_time": "2025-02-25-14.30.16.380257",
+                "message_text": "Propri\u00e9t\u00e9 de l'objet QP2CMD de QTEMP, type *USRSPC modifi\u00e9e.",
+                "second_level": "&N Cause . . . . . : La propri\u00e9t\u00e9 de l'objet QP2CMD de la biblioth\u00e8que QTEMP, type *USRSPC, a \u00e9t\u00e9 modifi\u00e9e.",
+                "from_program": "QSYCHONR",
+                "from_library": "QSYS",
+                "from_instruction": "00EE",
+                "to_program": "QLIINSRT",
+                "to_library": "QSYS",
+                "to_module": null,
+                "to_procedure": null,
+                "to_instruction": "0651"
+            }
+        ],
+        "object": "MESSAGESRV.SRVPGM",
+        "source": "/home/DRUBIGNY/builds/messageutils/MessagesCore/sources/MESSAGESRV.BND",
+        "output": "/home/DRUBIGNY/builds/messageutils/.logs/MessagesCore_sources_MESSAGESRV_BND.splf",
+        "failed": false
+    }
+]
