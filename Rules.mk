@@ -1,0 +1,1 @@
+SUBDIRS = MessagesCore/sources
